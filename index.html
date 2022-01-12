@@ -20,8 +20,8 @@
   const getLS = () => window.localStorage.getItem(LOCALSTORAGE_ITEM)
   const getBodyStr = () => document.getElementsByTagName('body')[0].innerHTML
   const setBodyStr = () => {
-    const bodyStr = getBodyStr()
-    console.log('body', bodyStr)
+    const bodyStr = getLS()
+    console.log('body', getLS())
     if (!bodyStr) return
     document.getElementsByTagName('body')[0].innerHTML = bodyStr
   }
