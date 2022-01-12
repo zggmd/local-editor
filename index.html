@@ -14,21 +14,25 @@
 </head>
 <body>
 </body>
-<script>
+<script id="不要用这个作为id哦">
   const LOCALSTORAGE_ITEM = 'LOCALSTORAGE_ITEM'
   const setLS = str => window.localStorage.setItem(LOCALSTORAGE_ITEM, str)
   const getLS = () => window.localStorage.getItem(LOCALSTORAGE_ITEM)
-  const getBodyStr = () => document.getElementsByTagName('body')[0].innerHTML
+  console.log('sssss', document.getElementsByTagName('body')[0].innerHTML.toString())
+  const getBodyStr = () => {
+    const res = document.getElementsByTagName('body')[0].innerHTML?.split("<script id=\"不要用这个作为id哦\">")?.[0]
+    console.log('getBodyStr', res)
+    return res
+  }
+
   const setBodyStr = () => {
     const bodyStr = getLS()
-    console.log('body', getLS())
     if (!bodyStr) return
     document.getElementsByTagName('body')[0].innerHTML = bodyStr
   }
   setInterval(() => {
-    console.log('setLS', getBodyStr())
     setLS(getBodyStr())
-  }, 5 * 1000)
+  }, 2 * 1000)
   setBodyStr()
 </script>
 </html>
