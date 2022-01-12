@@ -18,12 +18,7 @@
   const LOCALSTORAGE_ITEM = 'LOCALSTORAGE_ITEM'
   const setLS = str => window.localStorage.setItem(LOCALSTORAGE_ITEM, str)
   const getLS = () => window.localStorage.getItem(LOCALSTORAGE_ITEM)
-  console.log('sssss', document.getElementsByTagName('body')[0].innerHTML.toString())
-  const getBodyStr = () => {
-    const res = document.getElementsByTagName('body')[0].innerHTML?.split("<script id=\"不要用这个作为id哦\">")?.[0]
-    console.log('getBodyStr', res)
-    return res
-  }
+  const getBodyStr = () => document.getElementsByTagName('body')[0].innerHTML?.split("<script id=\"不要用这个作为id哦\">")?.[0]
 
   const setBodyStr = () => {
     const bodyStr = getLS()
