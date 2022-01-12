@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>本地编辑器</title>
   <style>
-    body {
-        background: #1c2127;
-        color: #acbac7;
-        font-size: 19px;
-    }
+      body {
+          background: #1c2127;
+          color: #acbac7;
+          font-size: 19px;
+      }
   </style>
 </head>
 <body>
@@ -27,7 +27,8 @@
   }
   setInterval(() => {
     setLS(getBodyStr())
-  }, 2 * 1000)
+  }, 60 * 1000)
   setBodyStr()
+  window.onbeforeunload = () => setLS(getBodyStr())
 </script>
 </html>
